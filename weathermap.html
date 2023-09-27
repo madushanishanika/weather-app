@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
+
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active">Home</a>
+        <a href="weathermap.html">Weather Map</a>
+        <a href="weathergallery.html">Weather Gallery</a>
+        <a href="login.html">Log In</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="div1">
+        <input type="text" id="txtLocation" class="yourLocation" value="Enter Your Location">
+        <button id="btnSearch" class="searchLocation">Search</button>
+    </div>
+    <h3>My Google Maps Demo</h3>
+    <div id="map" class="mapDiv" ></div>
+    <div class="footer">
+        <p>@All Right Reserved</p>
+    </div>
+    <script src="scripts/weatherapp.js"></script> 
+    <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active">Home</a>
+        <a href="weathermap.html">Weather Map</a>
+        <a href="weathergallery.html">Weather Gallery</a>
+        <a href="login.html">Log In</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="div1">
+        <input type="text" id="txtLocation" class="yourLocation" value="Enter Your Location">
+        <button id="btnSearch" class="searchLocation">Search</button>
+    </div>
+    <div class="div2">
+        <div class="div3">
+            <label for="datetime">2023-09-30</label><br>
+            <label for="currentLocation">currentLocation</label><br><br>
+            <label for="temperature" class="txtTemp" id="txtCurrenTemp">32C</label>
+        </div>
+
+        <div class="div4">
+            <img src="assets/weatherForecastImages/sun.png" alt="currentWeatherImg" width="140px" height="120px"><br>
+            <label for="weatherDescription">Clear</label>
+        </div>
+        <div class="div5">
+            <table>
+                <tr>
+                    <td>
+                        <label for="humidity">Humidity </label>
+                    </td>
+                    <td>
+                        <label for="humidityValue"> 53%</label>
+                    </td>
+                </tr>
+               <tr>
+                    <td>
+                        <label for="wind">Wind Speed</label>
+                    </td>
+                    <td>
+                        <label for="windValue">40mph</label>
+                    </td>
+               </tr>
+            </table>
+        </div>
+    </div>
+    <div class="div6">
+        <label for="hourlyForecast" class="hourlyForcast">Hourly Forecast</label>
+    </div>
+    <div class="div7">
+        <div class="div8" style="flex-basis: 20%;"> </div>
+        <div class="div8" style="flex-basis: 20%;"> </div>
+        <div class="div8" style="flex-basis: 20%;"> </div>
+        <div class="div8" style="flex-basis: 20%;"> </div>
+        <div class="div8" style="flex-basis: 20%;"> </div>
+    </div>
+    <div class="div6">
+        <label for="dailyForecast" class="dailyForcast">3 Days Daily Forecast</label>
+    </div>
+    <div class="div7">
+        <div class="div8" style="flex-basis: 33.33%;"> </div>
+        <div class="div8" style="flex-basis: 33.33%;"> </div>
+        <div class="div8" style="flex-basis: 33.33%;"> </div>
+    </div>
+    <div class="div6">
+        <label for="pastWeather" class="pastWeather">7 Days Past</label>
+    </div>
+    <div class="div7">
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+        <div class="div8" style="flex-basis: 14.28%;"> </div>
+    </div>
+    <div>
+
+    </div >
+    <label for="start"  class="searchLocation">start</label>
+    <div class="footer">
+        <p>footer</p>
+    </div>
+    <script src="scripts/weatherapp.js"></script>
+</body>
+
+
+</html>
