@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active">Home</a>
+        <a href="weathermap.html">Weather Map</a>
+        <a href="weathergallery.html">Weather Gallery</a>
+        <a href="login.html">Log In</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="div1">
+        <input type="text" id="txtLocation" class="yourLocation" placeholder="Enter Your Location">
+        <button id="btnSearch" class="searchLocation" onclick="btnSearchLocation()">Search</button>
+    </div>
+    <div class="div2">
+        <div class="div3">
+            <h3 id="currentDate">currentDate</h3><br>
+            <label for="temperature" class="txtTemp" id="txtCurrenTemp">32 °C</label>
+            <h2 id="currentLocation">Current City</h2><br>
+        </div>
+
+        <div class="div4">
+            <img src="" alt="currentWeatherImg" id="img" width="100px"><br>
+            <label for="weatherDescription" id="currentDescription">Clear</label>
+        </div>
+        <div class="div5">
+            <table>
+                <tr>
+                    <td>
+                        <label for="humidity">Humidity </label>
+                    </td>
+                    <td>
+                        <label for="humidityValue" id="currentHumidity"> 53%</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="wind">Wind Speed</label>
+                    </td>
+                    <td>
+                        <label for="windValue" id="currentWind">40mph</label>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <div class="div6">
+        <label for="hourlyForecast" class="hourlyForcast">Hourly Forecast</label>
+        <button onclick="getWeatherHourlyForecast()" id="btnHourlyForcast"
+            style="height:27px;font-size:  20px; border-radius: 10%;float: right;color: white;background-color: rgb(175, 25, 25);"><b>Get
+                Hourly Forcast</b></button>
+    </div>
+    <div class="div7">
+        <div class="div8" style="flex-basis: 20%;">
+            <h4 id="hourlyDate1" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="hourlyImg1" src="" alt="hourlyWImag1">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="hourlyTemp1" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="hourlyWindSpeed1" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="hourlyHumidity1" class="divP">Hum</p><br><br>
+            <h3 id="hourlyDescription1" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 20%;">
+            <h4 id="hourlyDate2" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="hourlyImg2" src="" alt="hourlyWImag2">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="hourlyTemp2" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="hourlyWindSpeed2" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="hourlyHumidity2" class="divP">Hum</p><br><br>
+            <h3 id="hourlyDescription2" class="divP">description</h3>
+
+        </div>
+        <div class="div8" style="flex-basis: 20%;">
+            <h4 id="hourlyDate3" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="hourlyImg3" src="" alt="hourlyWImag3">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="hourlyTemp3" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="hourlyWindSpeed3" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="hourlyHumidity3" class="divP">Hum</p><br><br>
+            <h3 id="hourlyDescription3" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 20%;">
+            <h4 id="hourlyDate4" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="hourlyImg4" src="" alt="hourlyWImag4">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="hourlyTemp4" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="hourlyWindSpeed4" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="hourlyHumidity4" class="divP">Hum</p><br><br>
+            <h3 id="hourlyDescription4" class="divP">description</h3>
+
+        </div>
+        <div class="div8" style="flex-basis: 20%;">
+            <h4 id="hourlyDate5" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="hourlyImg5" src="" alt="hourlyWImag5">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="hourlyTemp5" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="hourlyWindSpeed5" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="hourlyHumidity5" class="divP">Hum</p><br><br>
+            <h3 id="hourlyDescription5" class="divP">description</h3>
+
+        </div>
+    </div>
+    <div class="div6">
+        <label for="dailyForecast" class="dailyForcast">3 Days Daily Forecast</label>
+        <button onclick="getWeatherForecast()" id="btnDailyForcast"
+            style="height:27px;font-size:  20px; border-radius: 10%;float: right;color: white;background-color: rgb(175, 25, 25);"><b>Get
+                Forcast</b></button>
+    </div>
+    <div class="div7">
+        <div class="div8" style="flex-basis: 33.33%;">
+            <h4 id="forecastDate1" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="img1" src="" alt="weatherImag1">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="temp1" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="windSpeed1" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="humidity1" class="divP">Humidity</p><br><br>
+            <h3 id="description1" class="divP">description</h3>
+
+        </div>
+        <div class="div8" style="flex-basis: 33.33%;">
+            <h4 id="forecastDate2" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="img2" src="" alt="weatherImag2">
+            </div>
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="temp2" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="windSpeed2" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="humidity2" class="divP">Humidity</p><br><br>
+            <h3 id="description2" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 33.33%;">
+            <h4 id="forecastDate3" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="img3" src="" alt="weatherImag3">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="temp3" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="windSpeed3" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="humidity3" class="divP">Humidity</p><br><br>
+            <h3 id="description3" class="divP">description</h3>
+        </div>
+    </div>
+    <div class="div6">
+        <label for="pastWeather" class="pastWeather">7 Days Past</label>
+        <button onclick="getPastWeather()" id="btnPastWeather"
+        style="height:27px;font-size:  20px; border-radius: 10%;float: right;color: white;background-color: rgb(175, 25, 25);"><b>Get
+            Past Weather</b></button>
+    </div>
+    <div class="div7">
+        <div class="div8" style="flex-basis: 14.28%;">
+            <h4 id="pastDate1" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg1" src="" alt="weatherImag1">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp1" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed1" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity1" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription1" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 14.28%;"> 
+            <h4 id="pastDate2" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg2" src="" alt="weatherImag2">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp2" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed2" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity2" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription2" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 14.28%;"> 
+            <h4 id="pastDate3" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg3" src="" alt="weatherImag3">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp3" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed3" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity3" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription3" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 14.28%;">
+            <h4 id="pastDate4" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg4" src="" alt="weatherImag4">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp4" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed4" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity4" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription4" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 14.28%;"> 
+            <h4 id="pastDate5" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg5" src="" alt="weatherImag5">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp5" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed5" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity5" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription5" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 14.28%;"> 
+            <h4 id="pastDate6" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg6" src="" alt="weatherImag6">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp6" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed6" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity6" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription6" class="divP">description</h3>
+        </div>
+        <div class="div8" style="flex-basis: 14.28%;">
+            <h4 id="pastDate7" class="divP">Date</h4>
+            <div class="weatherImageDiv">
+                <img id="pastImg7" src="" alt="weatherImag7">
+            </div>
+
+            <p id="temp" class="divP">Temperature:</p>
+            <p id="pastTemp7" class="divP">T1</p> <br><br>
+            <p id="windSpeed" class="divP">Wind :</p>
+            <p id="pastWindSpeed7" class="divP">wind</p><br><br>
+            <p id="humidity" class="divP">Humidity :</p>
+            <p id="pastHumidity7" class="divP">Humidity</p><br><br>
+            <h3 id="pastDescription7" class="divP">description</h3>
+        </div>
+    </div>
+    <div class="footer">
+        <p>footer</p>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="scripts/home.js"></script>
+</body>
+
+
+</html>

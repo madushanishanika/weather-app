@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background-image: url('assets/weatherGallery/img5.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: 100% 100%;">
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active">Home</a>
+        <a href="weathermap.html">Weather Map</a>
+        <a href="weathergallery.html">Weather Gallery</a>
+        <a href="login.html">Log In</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="div1">
+        <input type="text" id="txtWeatherCondition" class="yourLocation" value="Enter weather condition">
+        <button id="btnSearch" class="searchLocation">Search</button>
+    </div>
+    <!-- <div class="image-container2">
+        <img src="assets/weatherGallery/img1.jpg" alt="Image1" class="moving-image">
+        <img src="assets/weatherGallery/img2.jpg" alt="Image2" class="moving-image">
+        <img src="assets/weatherGallery/img3.jpg" alt="Image3" class="moving-image">
+    </div> -->
+
+    <div class="image-container2">
+
+        <marquee>
+            <img src="assets/weatherGallery/img1.jpg" alt="Image1" width="500" height="400">
+            <img src="assets/weatherGallery/img2.jpg" alt="Image2" width="500" height="400">
+            <img src="assets/weatherGallery/img3.jpg" alt="Image3" width="500" height="400">
+            <img src="assets/weatherGallery/img4.jpeg" alt="Image3" width="500" height="400">
+        </marquee>
+    </div>
+
+  
+    <div class="footer">
+        <p>footer</p>
+    </div>
+    <script src="scripts/weatherapp.js"></script>
+</body>
+</html>

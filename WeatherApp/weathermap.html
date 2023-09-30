@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active">Home</a>
+        <a href="weathermap.html">Weather Map</a>
+        <a href="weathergallery.html">Weather Gallery</a>
+        <a href="login.html">Log In</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="div1">
+        <input type="text" id="txtLocation" class="yourLocation" placeholder="Enter your Location">
+        <button onclick="btnSearchLocation()" id="btnSearch" class="searchLocation">Search</button>
+    </div>
+    <h2>Google Map</h2>
+    <div id="map" class="mapDiv" ></div>
+    <h2 id="currentLocation" style="margin-left: 8px;">Current City</h2><br>
+    <div class="footer">
+        <p>@All Right Reserved</p>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="scripts/weatherapp.js"></script> 
+</body>
+</html>
